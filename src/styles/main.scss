@@ -1,0 +1,191 @@
+@use 'variaveis';
+@use 'hero';
+@use 'header';
+@use 'shows';
+@use 'plans';
+@use 'available-devices';
+@use 'faq';
+@use 'footer';
+
+@font-face {
+  font-family: Avenir;
+  src: url(../../assets/fonts/Avenir-Regular.woff2);
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: Avenir;
+  src: url(../../assets/fonts/Avenir-Bold.woff2;);
+  font-weight: 700;
+}
+
+@mixin text($fontSize: 16px) {
+  font-size: $fontSize;
+  line-height: $fontSize + 10px;
+  color: variaveis.$corTextoPrincipal;
+}
+
+@mixin titulo($fontSize: 40px) {
+  @include text($fontSize);
+  color: variaveis.$corTextoSecundario;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Avenir', sans-serif;
+}
+
+body {
+  background-color: variaveis.$corDeFundo;
+}
+
+.text--big {
+  @include text(18px);
+
+  @media (max-width:768px) {
+    @include text(15px);
+  }
+}
+
+.text {
+  @include text;
+
+  @media (max-width:768px) {
+    @include text(14px);
+  }
+}
+
+.text--small {
+  @include text(12px);
+
+  @media (max-width:768px) {
+    @include text(11px);
+  }
+}
+
+.titulo--big {
+  @include titulo(44px);
+
+  @media (max-width:768px) {
+    @include titulo(26px);
+  }
+}
+
+.titulo {
+  @include titulo;
+
+  @media (max-width:768px) {
+    @include titulo(24px);
+  }
+}
+
+.titulo--small {
+  @include titulo(28px);
+
+  @media (max-width:768px) {
+    @include titulo(22px);
+  }
+}
+
+.link-text {
+  @include text(18px);
+  color: variaveis.$corTextoSecundario;
+  text-decoration: underline;
+}
+
+.button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 60px;
+  font-size: 18px;
+  color: variaveis.$corTextoSecundario;
+  background-color: variaveis.$corDeFundoBotaoPrimario;
+  text-transform: uppercase;
+  border-radius: 4px;
+  cursor: pointer;
+  text-decoration: none;
+  padding: 8px 14px;
+  letter-spacing: 1px;
+  border: 1px solid variaveis.$corDeFundoBotaoPrimario;
+
+  &:hover {
+    transition: filter ease 0.2s;
+    filter: brightness(1.2);
+  }
+
+  &--secondary {
+    background-color: variaveis.$corDeFundoBotaoSecundario;
+    border-color: variaveis.$corDeFundoBotaoSecundario;
+
+    &:hover {
+      transition: background-color ease 0.2s;
+      background-color: #016cf9;
+    }
+  }
+
+  &--dark {
+    border-color: variaveis.$corTextoSecundario;
+    background-color: rgba(variaveis.$corDeFundoBotaoDark, 0.8);
+
+    &:hover {
+      transition: background-color ease 0.2s;
+      background-color: variaveis.$corTextoSecundario;
+      color: variaveis.$corDeFundo;
+    }
+  }
+}
+
+.image-text-section {
+  padding: 5.6vw;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  align-items: center;
+
+  @media (max-width:768px) {
+    display: block;
+  }
+
+  img {
+    max-width: 100%;
+  }
+
+  &__text_container {
+    padding: 0 2vw;
+
+    h2 {
+      margin-bottom: 24px;
+    }
+  }
+
+  &--image-full-width {
+    display: block;
+    position: relative;
+
+    img {
+      width: 100%;
+    }
+
+    &__text_container {
+      position: absolute;
+      left: 50%;
+      right: 5vw;
+      top: 0;
+      height: 100%;
+      padding: 0 26px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+
+      @media (max-width:768px) {
+        position: relative;
+        left: 0;
+        width: 100%;
+      }
+    
+    }
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "name": "projeto-clone-disney",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "build": "gulp",
+    "dev": "gulp watch",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Jonatan1103/projeto-clone-disney.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Jonatan1103/projeto-clone-disney/issues"
+  },
+  "homepage": "https://github.com/Jonatan1103/projeto-clone-disney#readme",
+  "devDependencies": {
+    "gulp": "^4.0.2",
+    "gulp-imagemin": "^7.1.0",
+    "gulp-sass": "^5.1.0",
+    "gulp-uglify": "^3.0.2",
+    "sass": "^1.58.3"
+  },
+  "description": ""
+}
